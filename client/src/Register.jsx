@@ -41,7 +41,7 @@ export const Register = (props) => {
 
     return (
         <div className="auth-form-container">
-            <h2>Register</h2>
+            <h2>Yoga Registration Form</h2>
         <form className="register-form" onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
             <input value={formData.name} name="name" onChange={handleChange} id="name" placeholder="full Name" required />
