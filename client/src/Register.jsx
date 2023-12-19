@@ -25,7 +25,7 @@ export const Register = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/v1/signUp', formData);
+            const response = await axios.post('https://flexmoney-backend-a8yv.onrender.com/api/v1/signUp', formData);
 
             // backend returns a token upon successful registration
             const token = response.data.data;
@@ -48,7 +48,7 @@ export const Register = (props) => {
             <label htmlFor="email">Email</label>
             <input value={formData.email} onChange={handleChange} type="email" placeholder="youremail@gmail.com" id="email" name="email" required />
             <label htmlFor="password">Password</label>
-            <input value={formData.password} onChange={handleChange} type="text" placeholder="********" id="password" name="password" required />
+            <input value={formData.password} onChange={handleChange} type="password" placeholder="********" id="password" name="password" required />
             <label htmlFor="age">Age</label>
             <input value={formData.age} onChange={handleChange} type="number" placeholder="Enter your age" id="age" name="age" required />
             <label htmlFor="selectBatch">Select Batch</label>

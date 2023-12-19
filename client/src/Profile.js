@@ -24,11 +24,11 @@ const Profile = () => {
                 return;
             }
 
-            const batchResponse = await axios.patch(`http://localhost:8000/api/v1/batchChange/${decodedToken._id}`);
+            const batchResponse = await axios.patch(`https://flexmoney-backend-a8yv.onrender.com/api/v1/batchChange/${decodedToken._id}`);
             console.log(batchResponse.success);
 
             if (batchResponse.status === 200) {
-                await axios.patch(`http://localhost:8000/api/v1/batchChange/${decodedToken._id}`, { batch: selectedBatch });
+                await axios.patch(`https://flexmoney-backend-a8yv.onrender.com/api/v1/batchChange/${decodedToken._id}`, { batch: selectedBatch });
                 alert('Batch has been updated.');
             } 
 
@@ -47,7 +47,7 @@ const Profile = () => {
             // Check the value of paymentPrice
             if (decodedToken.paymentPrice === 0) {
                 console.log(decodedToken.paymentPrice);
-                 await axios.patch(`http://localhost:8000/api/v1/paymentCompleted/${decodedToken._id}`);
+                 await axios.patch(`https://flexmoney-backend-a8yv.onrender.com/api/v1/paymentCompleted/${decodedToken._id}`);
                 decodedToken.paymentPrice = 500;
                 alert('Payment made for this month. Thank you!');
             }else if (decodedToken.paymentPrice === 500) {
